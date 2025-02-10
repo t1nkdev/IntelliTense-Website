@@ -13,25 +13,32 @@ export default function DashboardDemo() {
 
       {/* Menu Navigation */}
       <div className="w-full bg-white shadow-sm mt-[3.2rem]">
-        <div className="max-w-[1600px] mx-auto px-8">
-          <div className="flex items-center justify-between h-7">
+        <div className="max-w-[1600px] mx-auto px-24">
+          <div className="flex items-center justify-between h-9">
             <div className="flex items-center gap-2">
-              <button className="h-full px-1.5 border-b-2 border-blue-600 text-blue-600 text-[13px] font-medium">
+              <button className="h-full px-1.5 border-b-2 border-blue-600 text-blue-600 text-[14px] font-medium">
                 Dashboard
               </button>
-              <button className="h-full px-1.5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 text-[13px] font-medium">
+              <button className="h-full px-1.5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 text-[14px] font-medium">
                 Schedule
               </button>
-              <button className="h-full px-1.5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 text-[13px] font-medium">
+
+              <button className="h-full px-1.5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 text-[14px] font-medium">
                 Employees
               </button>
-              <button className="h-full px-1.5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 text-[13px] font-medium">
+
+
+              <button className="h-full px-1.5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 text-[14px] font-medium">
                 Reports
               </button>
-              <button className="h-full px-1.5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 text-[13px] font-medium">
+
+
+              <button className="h-full px-1.5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 text-[14px] font-medium">
                 Settings
               </button>
+
             </div>
+
             <div className="flex items-center gap-1.5">
               <span className="text-[11px] text-gray-500">Last updated: 2m ago</span>
               <div className="h-2 w-px bg-gray-200"></div>
@@ -55,17 +62,18 @@ export default function DashboardDemo() {
 
         {/* Favorites Section */}
         <div className="bg-white rounded-xl border border-gray-200 mb-8">
-          <div className="grid grid-cols-8 gap-1 p-2">
+          <div className="grid grid-cols-5 gap-1 p-2">
             {favorites.map((item, index) => (
               <button 
                 key={index}
                 className="p-3 text-center hover:bg-gray-50 rounded-lg transition-colors group"
               >
+                
                 <div className={`w-10 h-10 rounded-lg ${item.bgColor} ${item.iconColor} mx-auto mb-2 flex items-center justify-center group-hover:opacity-80 transition-opacity`}>
                   <item.icon className="w-5 h-5" />
                 </div>
-                <div className="text-xs font-medium text-gray-900">{item.name}</div>
-                <div className="text-[10px] text-gray-500">{item.description}</div>
+                <div className="text-m font-medium text-gray-900">{item.name}</div>
+                <div className="text-[12px] text-gray-500">{item.description}</div>
               </button>
             ))}
           </div>
@@ -222,43 +230,37 @@ const employeeData = [
 ];
 
 const favorites = [
+  
   {
-    name: "Add Employee",
-    description: "Create new profile",
-    icon: UserPlus,
-    bgColor: "bg-green-100",
-    iconColor: "text-green-600"
-  },
-  {
-    name: "Schedule",
+    name: "Schedule Management",
     description: "Manage shifts",
     icon: Calendar,
     bgColor: "bg-blue-100",
     iconColor: "text-blue-600"
   },
   {
-    name: "Reports",
+    name: "Reports & Analytics",
     description: "View analytics",
     icon: FileText,
     bgColor: "bg-purple-100",
     iconColor: "text-purple-600"
   },
   {
-    name: "Departments",
+    name: "Departments & Teams",
     description: "Team structure",
     icon: Building2,
     bgColor: "bg-orange-100",
     iconColor: "text-orange-600"
   },
   {
-    name: "Messages",
+    name: "Messages ",
     description: "Team chat",
     icon: MessageSquare,
     bgColor: "bg-pink-100",
     iconColor: "text-pink-600"
   },
   {
-    name: "Tasks",
+    name: "Tasks & Assignments",
     description: "Manage workflow",
     icon: ClipboardList,
     bgColor: "bg-indigo-100",
@@ -272,35 +274,29 @@ const favorites = [
     iconColor: "text-gray-600"
   },
   {
-    name: "Notifications",
+    name: "Notifications ",
     description: "View alerts",
     icon: Bell,
     bgColor: "bg-red-100",
     iconColor: "text-red-600"
   },
   {
-    name: "Time Off",
+    name: "Time Off & Holidays",
     description: "Leave requests",
     icon: Calendar,
     bgColor: "bg-teal-100",
     iconColor: "text-teal-600"
   },
+  
   {
-    name: "Training",
-    description: "Learning portal",
-    icon: Briefcase,
-    bgColor: "bg-yellow-100",
-    iconColor: "text-yellow-700"
-  },
-  {
-    name: "Performance",
+    name: "Performance ",
     description: "Reviews & goals",
     icon: BarChart3,
     bgColor: "bg-cyan-100",
     iconColor: "text-cyan-600"
   },
   {
-    name: "Directory",
+    name: "Directory EM Management",
     description: "Employee list",
     icon: Users,
     bgColor: "bg-rose-100",
