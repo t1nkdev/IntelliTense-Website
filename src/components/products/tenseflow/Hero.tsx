@@ -3,16 +3,18 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="w-full bg-[#6B2C91] min-h-[600px] flex items-center relative overflow-hidden">
+    <div className="w-full bg-[#a100c2] min-h-[500px] flex items-center relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
       
+
       <div className="max-w-[90rem] mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-2xl">
-          <h1 className="text-6xl font-bold text-white mb-6 leading-tight">
+        <div className="max-w-4xl">
+          <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
             TenseFlow
             <br />
             Workforce Management
+
           </h1>
           <p className="text-xl text-white/90 mb-6">
             Experience how TenseFlow combines <span className="font-semibold">AI-powered scheduling and workforce management</span> to transform your business operations.

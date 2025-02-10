@@ -1,10 +1,10 @@
-import TopBar from "@/components/TopBar";
-import Hero from "@/components/Hero";
-import PowerfulFeatures from "@/components/PowerfulFeatures";
-import Solutions from "@/components/Solutions";
-import Testimonials from "@/components/Testimonials";
-import ContactCTA from "@/components/ContactCTA";
-import Footer from "@/components/Footer";
+import TopBar from "@/components/main/TopBar";
+import Hero from "@/components/main/Hero";
+import PowerfulFeatures from "@/components/main/PowerfulFeatures";
+import Solutions from "@/components/main/Solutions";
+import Testimonials from "@/components/main/Testimonials";
+import ContactCTA from "@/components/main/ContactCTA";
+import Footer from "@/components/main/Footer";
 
 export default function Home() {
   return (

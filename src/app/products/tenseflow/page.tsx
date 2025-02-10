@@ -1,5 +1,5 @@
-import TopBar from "@/components/TopBar";
-import Footer from "@/components/Footer";
+import TopBar from "@/components/main/TopBar";
+import Footer from "@/components/main/Footer";
 import Hero from "@/components/products/tenseflow/Hero";
 import { Calendar, Clock, Users, BarChart3, Building2, Laptop } from 'lucide-react';
 
