@@ -43,14 +43,14 @@ export default function ContactCTA() {
               <Mail className="w-6 h-6" />
               <div>
                 <p className="font-medium">Email Us</p>
-                <p className="text-gray-300">sales@tenseflow.com</p>
+                <p className="text-gray-300">sales@intellitense.com</p>
               </div>
             </div>
             <div className="flex items-center gap-4 text-white">
               <Phone className="w-6 h-6" />
               <div>
                 <p className="font-medium">Call Us</p>
-                <p className="text-gray-300">+1 (555) 123-4567</p>
+                <p className="text-gray-300">+49 (0) 176 300 33 333</p>
               </div>
             </div>
           </motion.div>

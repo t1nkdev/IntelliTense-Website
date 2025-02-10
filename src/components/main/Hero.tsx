@@ -16,13 +16,13 @@ export default function Hero() {
           </p>
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-2">TenseFlow Shift Management</h2>
-            <p className="text-lg text-gray-300">Available Now | TenseCloud ERP Coming 2025</p>
+            <p className="text-lg text-gray-300">Available Now</p>
           </div>
           <Link 
-            href="/tenseflow"
+            href="/products/tenseflow"
             className="inline-block px-6 py-3 bg-[#0070F2] hover:bg-[#0060D1] text-white font-medium rounded-lg transition-colors"
           >
-            Learn more
+            About TenseFlow
           </Link>
         </div>
       </div>

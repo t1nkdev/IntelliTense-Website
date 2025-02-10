@@ -23,12 +23,7 @@ export default function Hero() {
               <p className="text-lg text-white/80">Available Now | Start Free Trial</p>
             </div>
             <div className="flex gap-4">
-              <Link 
-                href="/trial"
-                className="inline-block px-6 py-3 bg-white text-[#6B2C91] hover:bg-white/90 font-medium rounded-lg transition-colors"
-              >
-                Start Free Trial
-              </Link>
+          
               <Link 
                 href="/demo"
                 className="inline-block px-6 py-3 bg-black/20 hover:bg-black/30 text-white font-medium rounded-lg transition-colors"

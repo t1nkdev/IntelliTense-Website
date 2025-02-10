@@ -1,5 +1,6 @@
 import TopBar from "@/components/main/TopBar";
 import Hero from "@/components/main/Hero";
+import NewsNavBar from "@/components/main/NewsNavBar";
 import PowerfulFeatures from "@/components/main/PowerfulFeatures";
 import Solutions from "@/components/main/Solutions";
 import Testimonials from "@/components/main/Testimonials";
@@ -11,6 +12,7 @@ export default function Home() {
     <main className="min-h-screen bg-white pt-12">
       <TopBar />
       <Hero />
+      <NewsNavBar />
       <PowerfulFeatures />
       <Solutions />
       <Testimonials />
