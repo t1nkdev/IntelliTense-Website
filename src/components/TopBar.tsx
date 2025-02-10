@@ -1,12 +1,16 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from "next/link";
-import { Search, User, Globe } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Search, User, Globe, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import LanguageSelector from './LanguageSelector';
+import Image from 'next/image';
 
 export default function TopBar() {
   const [scrolled, setScrolled] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +19,36 @@ export default function TopBar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (productsOpen && !(event.target as Element).closest('.products-menu')) {
+        setProductsOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [productsOpen]);
+
+  const products = [
+    {
+      name: 'TenseCloud ERP',
+      href: '/products/erp'
+    },
+    {
+      name: 'TenseCloud MES',
+      href: '/products/mes'
+    },
+    {
+      name: 'TenseCloud Quality',
+      href: '/products/quality'
+    },
+    {
+      name: 'TenseFlow',
+      href: '/products/tenseflow'
+    }
+  ];
 
   return (
     <div className="fixed top-0 w-full z-40">
@@ -33,17 +67,55 @@ export default function TopBar() {
                   IT
                 </span>
               </div>
-              <span className="text-[1.35rem] font-bold tracking-tight text-[#0066B3]">
+              <span className="text-[1.35rem] font-bold tracking-tight text-[#0066B3] flex items-center">
                 IntelliTense
+                {pathname === '/products/tenseflow' && (
+                  <>
+                    <span className="font-light text-gray-400 mx-2">|</span>
+                    <span className="font-bold text-black flex items-center gap-1">
+                      TenseFlow
+                      <Image 
+                        src="/icons/flow.png" 
+                        alt="Flow Icon" 
+                        width={20} 
+                        height={20} 
+                        className="inline-block"
+                      />
+                    </span>
+                  </>
+                )}
               </span>
             </motion.div>
           </Link>
 
           <div className="flex items-center gap-8">
             <nav className="flex items-center gap-6">
-              <Link href="/products" className="text-sm font-medium text-gray-700 hover:text-[#0066B3] transition-colors">
-                Products
-              </Link>
+              <div className="relative products-menu group">
+                <button
+                  onClick={() => setProductsOpen(!productsOpen)}
+                  className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-[#0066B3] py-4 transition-colors"
+                >
+                  Products
+                  <ChevronDown className="w-3 h-3" />
+                </button>
+                
+                {productsOpen && (
+                  <div className="absolute top-full left-0 w-[280px] bg-white shadow-lg border-t border-gray-200">
+                    <div className="py-2">
+                      {products.map((product) => (
+                        <Link
+                          key={product.name}
+                          href={product.href}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#0066B3]"
+                          onClick={() => setProductsOpen(false)}
+                        >
+                          {product.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
               <Link href="/support" className="text-sm font-medium text-gray-700 hover:text-[#0066B3] transition-colors">
                 Support
               </Link>
