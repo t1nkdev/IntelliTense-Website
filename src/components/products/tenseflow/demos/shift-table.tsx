@@ -31,11 +31,7 @@ const schedule: Schedule = {
 
 export default function ShiftTable() {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="bg-white/95 backdrop-blur-md rounded-t-xl shadow-xl p-4 w-[600px]"
-    >
+    <div className="bg-white/95 backdrop-blur-md rounded-t-xl shadow-xl p-4 w-[600px]">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-gray-800">Weekly Schedule</h3>
         <div className="flex items-center gap-4">
@@ -90,7 +86,7 @@ export default function ShiftTable() {
           </tbody>
         </table>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

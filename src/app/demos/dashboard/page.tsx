@@ -13,7 +13,7 @@ export default function DashboardDemo() {
 
       {/* Menu Navigation */}
       <div className="w-full bg-white shadow-sm mt-[3.2rem]">
-        <div className="max-w-[1920px] mx-auto px-4 lg:px-8 2xl:px-16">
+        <div className="max-w-[1920px] min-[2000px]:max-w-[2400px] mx-auto px-4 lg:px-8 2xl:px-16">
           <div className="flex items-center justify-between h-9">
             <div className="flex items-center gap-2">
               <button className="h-full px-1.5 border-b-2 border-blue-600 text-blue-600 text-[14px] font-medium">
@@ -51,7 +51,7 @@ export default function DashboardDemo() {
       </div>
 
       {/* Dashboard Content */}
-      <div className="max-w-[1920px] mx-auto px-4 lg:px-8 2xl:px-16 py-6 lg:py-8">
+      <div className="max-w-[1920px] min-[2000px]:max-w-[2400px] mx-auto px-4 lg:px-8 2xl:px-16 py-6 lg:py-8">
         {/* Quick Access Title with Edit */}
         <div className="flex items-center gap-2 mb-4">
           <h2 className="text-sm font-medium text-gray-600">Quick Access</h2>
@@ -62,17 +62,19 @@ export default function DashboardDemo() {
 
         {/* Favorites Section */}
         <div className="bg-white rounded-xl border border-gray-200 mb-6 lg:mb-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6 gap-3 p-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-5 gap-3 p-4">
             {favorites.map((item, index) => (
               <button 
                 key={index}
-                className="p-4 text-center hover:bg-gray-50 rounded-lg transition-colors group"
+                className="flex items-center gap-4 p-4 hover:bg-gray-50 rounded-lg transition-colors group text-left"
               >
-                <div className={`w-12 h-12 rounded-lg ${item.bgColor} ${item.iconColor} mx-auto mb-3 flex items-center justify-center group-hover:opacity-80 transition-opacity`}>
-                  <item.icon className="w-6 h-6" />
+                <div className={`flex-shrink-0 w-10 h-10 rounded-lg ${item.bgColor} ${item.iconColor} flex items-center justify-center group-hover:opacity-80 transition-opacity`}>
+                  <item.icon className="w-5 h-5" />
                 </div>
-                <div className="text-sm lg:text-base font-medium text-gray-900">{item.name}</div>
-                <div className="text-xs text-gray-500 mt-1">{item.description}</div>
+                <div>
+                  <div className="text-sm lg:text-base font-medium text-gray-900">{item.name}</div>
+                  <div className="text-xs text-gray-500">{item.description}</div>
+                </div>
               </button>
             ))}
           </div>

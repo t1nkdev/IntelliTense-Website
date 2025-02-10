@@ -3,6 +3,7 @@ import Footer from "@/components/main/Footer";
 import Hero from "@/components/products/tenseflow/Hero";
 import NewsFlow from "@/components/products/tenseflow/NewsFlow";
 import { Building2, Users, ChartBar, Clock, Shield, Zap } from 'lucide-react';
+import Image from "next/image";
 
 export default function TenseFlowPage() {
   return (
@@ -30,6 +31,56 @@ export default function TenseFlowPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Dashboard Demo Section */}
+      <section className="w-full bg-white py-16">
+        <div className="max-w-[2000px] mx-auto px-4 lg:px-16">
+          <div className="grid lg:grid-cols-4 gap-24 items-center">
+            {/* Left side - Text Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+                Powerful Dashboard for Complete Control
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Experience seamless workforce management with our intuitive dashboard. Get real-time insights into employee schedules, track performance metrics, and manage team activities all in one place. Our comprehensive solution helps you make data-driven decisions and keep your organization running efficiently.
+              </p>
+              <div className="flex items-center gap-5">
+                <button className="inline-flex items-center px-7 py-3.5 rounded-xl bg-[#0066B3] text-white text-lg font-medium hover:bg-blue-700 transition-colors">
+                  Try Demo
+                </button>
+                <button className="inline-flex items-center px-7 py-3.5 rounded-xl text-[#0066B3] text-lg font-medium hover:bg-blue-50 transition-colors">
+                  Learn More
+                </button>
+              </div>
+            </div>
+
+            {/* Right side - Dashboard Image in Browser Frame */}
+            <div className="lg:col-span-3 relative">
+              {/* Browser Window Frame */}
+              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+                <div className="bg-gray-100 px-4 py-2.5 border-b border-gray-200 flex items-center gap-2">
+                  <div className="flex gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                  </div>
+                </div>
+                <Image
+                  src="/demo2-dashboard.png"
+                  alt="TenseFlow Dashboard Demo"
+                  width={1920}
+                  height={1080}
+                  className="w-full"
+                  priority
+                  quality={100}
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-full h-full bg-gray-100 -z-10 rounded-2xl"></div>
+              <div className="absolute -bottom-3 -right-3 w-full h-full bg-gray-50 -z-20 rounded-2xl"></div>
+            </div>
           </div>
         </div>
       </section>

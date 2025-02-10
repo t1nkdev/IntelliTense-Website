@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
       
       <div className="w-full relative z-10">
-        <div className="pl-10">
+        <div className="pl-10 min-[1920px]:pl-[20%]">
           <div className="max-w-xl">
             <h1 className="text-3xl font-bold text-white leading-tight">
               TenseFlow
@@ -40,7 +40,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-20 z-20">
+      <div className="absolute bottom-0 right-20 min-[1920px]:right-[20%] z-20">
         <ShiftTable />
         <div className="absolute -top-10 -right-6 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
         <div className="absolute -left-8 -top-8 w-32 h-28 bg-white/5 rounded-full blur-xl"></div>
