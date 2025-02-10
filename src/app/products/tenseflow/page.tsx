@@ -1,35 +1,33 @@
 import TopBar from "@/components/main/TopBar";
 import Footer from "@/components/main/Footer";
 import Hero from "@/components/products/tenseflow/Hero";
-import { Calendar, Clock, Users, BarChart3, Building2, Laptop } from 'lucide-react';
+import NewsFlow from "@/components/products/tenseflow/NewsFlow";
+import { Building2, Users, ChartBar, Clock, Shield, Zap } from 'lucide-react';
 
 export default function TenseFlowPage() {
   return (
     <main className="min-h-screen bg-white pt-12">
       <TopBar />
       <Hero />
+      <NewsFlow />
 
-      {/* Features Grid */}
-      <section className="py-24 bg-white">
+      {/* Use Cases Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-[#0A1657]">Powerful Features</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Everything you need to manage your workforce efficiently
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div 
-                key={index}
-                className="p-8 rounded-xl border border-gray-200 hover:border-[#0066B3] hover:shadow-md transition-all group"
-              >
-                <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
-                  <feature.icon className="w-7 h-7 text-[#0066B3]" />
+          <h2 className="text-3xl font-bold mb-12 text-[#0A1657]">Transform Your Workforce Management</h2>
+          
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
+            {useCases.map((useCase, index) => (
+              <div key={index} className="max-w-xl">
+                <h3 className="text-xl font-semibold mb-3 text-[#0A1657]">{useCase.title}</h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">{useCase.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {useCase.tags.map((tag, i) => (
+                    <span key={i} className="px-3 py-1 rounded-full bg-gray-50 text-gray-600 text-sm">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-[#0A1657]">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -79,36 +77,40 @@ export default function TenseFlowPage() {
   );
 }
 
-const features = [
+const useCases = [
   {
-    title: "Smart Scheduling",
-    description: "AI-powered scheduling that automatically creates optimal shift patterns while considering employee preferences and business needs.",
-    icon: Calendar
+    title: "Enterprise Workforce Planning",
+    description: "Large organizations use TenseFlow to manage complex shift patterns across multiple locations while maintaining compliance and efficiency. Our platform enables seamless coordination between different departments and ensures optimal resource allocation across the entire organization.",
+    tags: ["Multi-location", "Compliance", "Enterprise", "Scheduling"]
   },
   {
-    title: "Time Tracking",
-    description: "Comprehensive time tracking with mobile check-in/out, break management, and overtime monitoring in real-time.",
-    icon: Clock
+    title: "Healthcare Staff Management",
+    description: "Hospitals and clinics optimize staff schedules while ensuring proper coverage for all departments and specialties. The system takes into account specific certifications, skill sets, and regulatory requirements to maintain the highest standards of patient care.",
+    tags: ["Healthcare", "24/7 Coverage", "Skills Management"]
   },
   {
-    title: "Team Management",
-    description: "Complete workforce management with detailed employee profiles and team organization tools.",
-    icon: Users
+    title: "Retail Operations",
+    description: "Retail chains use predictive analytics to align staffing levels with customer demand and seasonal variations.",
+    icon: ChartBar,
+    tags: ["Retail", "Analytics", "Demand Planning"]
   },
   {
-    title: "Analytics Dashboard",
-    description: "Advanced reporting with customizable dashboards showing labor costs, attendance patterns, and productivity metrics.",
-    icon: BarChart3
+    title: "Manufacturing Shifts",
+    description: "Factories maintain optimal production levels by efficiently managing worker shifts and machine operations schedules.",
+    icon: Clock,
+    tags: ["Manufacturing", "Production", "Shift Planning"]
   },
   {
-    title: "Multi-location",
-    description: "Manage multiple locations and departments from a single platform with location-specific settings.",
-    icon: Building2
+    title: "Security Services",
+    description: "Security companies ensure round-the-clock coverage while managing guard rotations and emergency response teams.",
+    icon: Shield,
+    tags: ["Security", "24/7 Operations", "Team Rotation"]
   },
   {
-    title: "Mobile Access",
-    description: "Access schedules, request time off, and manage shifts from anywhere with our mobile-friendly interface.",
-    icon: Laptop
+    title: "Quick Service Restaurants",
+    description: "Restaurant chains optimize staff schedules based on peak hours and real-time demand forecasting.",
+    icon: Zap,
+    tags: ["Restaurants", "Peak Management", "Forecasting"]
   }
 ];
 
