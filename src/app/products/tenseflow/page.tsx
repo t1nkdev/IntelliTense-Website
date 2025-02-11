@@ -4,11 +4,13 @@ import Hero from "@/components/products/tenseflow/Hero";
 import NewsFlow from "@/components/products/tenseflow/NewsFlow";
 import { Building2, Users, ChartBar, Clock, Shield, Zap } from 'lucide-react';
 import Image from "next/image";
+import SecondNavbar from "@/components/products/tenseflow/SecondNavbar";
 
 export default function TenseFlowPage() {
   return (
     <main className="min-h-screen bg-white pt-12">
       <TopBar />
+      <SecondNavbar />
       <Hero />
       <NewsFlow />
 

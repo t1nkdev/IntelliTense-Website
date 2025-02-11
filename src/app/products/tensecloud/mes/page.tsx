@@ -4,11 +4,13 @@ import ContactCTA from "@/components/main/ContactCTA";
 import MESHero from "@/components/products/tensecloud-mes/Hero";
 import MESFeatures from "@/components/products/tensecloud-mes/Features";
 import MESDashboard from "@/components/products/tensecloud-mes/demos/dashboard";
+import SecondNavbar from "@/components/products/tensecloud-mes/SecondNavbar";
 
 export default function TenseCloudMESPage() {
   return (
     <main className="min-h-screen bg-white pt-12">
       <TopBar />
+      <SecondNavbar />
       <MESHero />
       
       {/* Dashboard Demo Section */}

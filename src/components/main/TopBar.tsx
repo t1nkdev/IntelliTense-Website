@@ -88,57 +88,45 @@ export default function TopBar() {
   return (
     <div className="fixed top-0 w-full z-40">
       {/* Single Navbar */}
-      <div className={`w-full h-14 bg-white border-b border-gray-200 transition-all duration-300`}>
-        <div className="h-full max-w-[90rem] mx-auto px-4 flex items-center justify-between">
+      <div className={`w-full h-14 ${
+        pathname === '/products/tenseflow' || pathname === '/products/tensecloud/erp' || pathname === '/products/tensecloud/mes'
+          ? 'bg-gray-100' 
+          : 'bg-white'
+      } border-b border-white transition-all duration-300`}>
+        <div className="h-full mx-auto px-4 md:px-16 lg:container lg:max-w-[80%] xl:max-w-[90rem] flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="flex items-center gap-2"
-            >
-              <div className="relative">
-                <div className="absolute inset-0 bg-[#0066B3] clip-path-polygon" />
-                <span className="relative text-[1.35rem] font-bold tracking-tight text-white px-3 py-1">
-                  IT
-                </span>
+            <div className="flex items-center gap-2">
+              <div className="relative w-8 h-8 bg-[#0066B3] flex items-center">
+                <div className="absolute -left-[18px] h-full flex">
+                  <div className="h-8 w-[6px] bg-[#66A3D8] opacity-40"></div>
+                  <div className="h-8 w-[6px] bg-[#3385C6] opacity-60"></div>
+                  <div className="h-8 w-[6px] bg-[#0077CC] opacity-80"></div>
+                </div>
               </div>
-              <span className="text-[1.35rem] font-bold tracking-tight text-[#0066B3] flex items-center">
+              <span className="text-[1.35rem] font-semibold tracking-tight text-[#0066B3] flex items-center">
                 IntelliTense
                 {pathname === '/products/tenseflow' && (
                   <>
-                    <span className="font-light text-gray-400 mx-2">|</span>
-                    <span className="font-bold text-black flex items-center gap-1">
-                      TenseFlow
-                      <Image 
-                        src="/icons/flow.png" 
-                        alt="Flow Icon" 
-                        width={20} 
-                        height={20} 
-                        className="inline-block"
-                      />
-                    </span>
+                    
                   </>
                 )}
                 {pathname.includes('/products/tensecloud') && (
+                  
                   <>
-                    <span className="font-light text-gray-400 mx-2">|</span>
+                  
+              
+                    
                     <span className="font-bold text-black flex items-center gap-1">
-                      TenseCloud
+                      
                       <span className="text-black font-light">
-                        {pathname === '/products/tensecloud/mes' ? 'MES' : 'ERP'}
+                        
                       </span>
-                      <Image 
-                        src="/icons/3arrows.png" 
-                        alt="Cloud Icon" 
-                        width={20} 
-                        height={20} 
-                        className="inline-block"
-                      />
+                     
                     </span>
                   </>
                 )}
               </span>
-            </motion.div>
+            </div>
           </Link>
 
           <div className="flex items-center gap-8">
@@ -211,6 +199,9 @@ export default function TopBar() {
               <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-[#0066B3] transition-colors">
                 About
               </Link>
+              <button className="text-sm font-medium text-gray-700">
+                <div className="flex items-center gap-2 border hover:bg-[#0066B3] hover:text-white transition-colors border-gray-300 rounded-full px-3 py-1">Contact Us</div>
+              </button>
             </nav>
 
             <div className="flex items-center gap-4">

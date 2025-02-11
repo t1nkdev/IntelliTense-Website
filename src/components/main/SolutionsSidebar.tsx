@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function SolutionsSidebar() {
   return (
-    <div className="w-[400px] min-h-screen bg-[#f8fafc] border-l border-gray-100">
+    <div className="w-[400px] min-h-screen bg-[#f8fafc] border-l border-white">
       <div className="p-10 h-full flex flex-col">
         {/* Header */}
         <div className="mb-10">
